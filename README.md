@@ -1,2 +1,1 @@
-# images
-Images we use
+This repo contains Docker images we use.
