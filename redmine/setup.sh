@@ -4,9 +4,6 @@ apt-get update
 apt-get install -y subversion ssh build-essential zlib1g-dev
 
 mkdir -p /home/redmine/.ssh/
-#cp /home/redmine/_ssh/* /home/redmine/.ssh/
-chown -R redmine:redmine /home/redmine/.ssh/
-#chmod 0400 /home/redmine/.ssh/id_rsa
 
 . /opt/bitnami/scripts/redmine-env.sh
 . /opt/bitnami/scripts/libredmine.sh
