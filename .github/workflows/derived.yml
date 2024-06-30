@@ -11,18 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Query latest Bitnami Redmine version
         id: check_version
         run: |
           latest_version=$(curl -s https://hub.docker.com/v2/repositories/bitnami/redmine/tags | jq -r '.results | map(select(.name | test("^\\d+\\.\\d+\\.\\d+-debian"))) | .[0].name')
-          echo "latest_version=${latest_version}" >> $GITHUB_ENV
+          echo "wd_hash=$(tar c redmine | md5sum)" | tee -a $GITHUB_ENV
+          echo "latest_version=${latest_version}" | tee -a $GITHUB_ENV
           echo "$latest_version" > .latest_version
 
       - name: Set up Cache
         id: cache
         uses: actions/cache@v3
         with:
-          key: ${{ env.latest_version }}
+          key: ${{ env.latest_version }}-${{ env.wd_hash }}
           path: .latest_version
           lookup-only: true
 
