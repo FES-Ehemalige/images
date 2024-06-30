@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
 gem 'jwt'
 gem 'oauth2'
+gem 'factory_girl'
+gem 'rails-controller-testing'
