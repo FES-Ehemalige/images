@@ -24,7 +24,7 @@ jobs:
 
       - name: Set up Cache
         id: cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ env.latest_version }}-${{ env.wd_hash }}
           path: .latest_version
