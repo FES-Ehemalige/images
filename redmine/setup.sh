@@ -18,4 +18,5 @@ run_as_user redmine bundle config set frozen false
 run_as_user redmine bundle install
 run_as_user redmine bundle config unset frozen
 
+# customize ticket field naming
 sed -i 's#field_due_date: Abgabedatum#field_due_date: Ende / Wiedervorlage#' config/locales/de.yml
