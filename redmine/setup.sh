@@ -1,7 +1,9 @@
 #!/bin/bash
 
+set -e
+
 apt-get update
-apt-get install -y subversion ssh build-essential zlib1g-dev
+apt-get install -y subversion ssh build-essential zlib1g-dev libpq-dev default-libmysqlclient-dev
 
 mkdir -p /home/redmine/.ssh/
 
