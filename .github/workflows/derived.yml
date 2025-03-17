@@ -48,6 +48,6 @@ jobs:
         with:
           context: "{{defaultContext}}:redmine"
           push: true
-          tags: quay.io/fesehemalige/redmine:${{ env.latest_version }}
+          tags: quay.io/fesehemalige/redmine:5.1.4-debian-12-r5
           build-args: |
-            TAG=${{ env.latest_version }}
+            TAG=5.1.4-debian-12-r5
